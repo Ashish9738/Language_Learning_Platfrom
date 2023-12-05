@@ -1,0 +1,82 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(
+      content="width=device-width, initial-scale=1.0" 
+      name="viewport"
+      )
+    title English Quiz
+    style
+      include ../public/css/arabic-quiz2.css
+  body(onload="NextQuestion(0)")
+    main
+      #score-modal.modal-container
+        .modal-content-container
+          h1 Congratulations, Quiz Completed.
+          .grade-details
+            p Attempts : 10
+            p
+              | Wrong Answers :
+              span#wrong-answers
+            p
+              | Right Answers :
+              span#right-answers
+            p
+              | Grade :
+              span#grade-percentage
+              | %
+            p
+              span#remarks
+          .modal-button-container
+            button(onclick="closeScoreModal()") Continue
+      .game-quiz-container
+        .game-details-container
+          h1
+            | Score :
+            span#player-score
+            | / 10
+          h1
+            | Question :
+            span#question-number
+            | / 10
+        .game-question-container
+          h1#display-question
+        .game-options-container
+          #option-modal.modal-container
+            .modal-content-container
+              h1 Please Pick An Option
+              .modal-button-container
+                button(onclick="closeOptionModal()") Continue
+          span
+            input#option-one.radio(
+              value="optionA" 
+              name="option" 
+              type="radio"
+              )
+            label#option-one-label.option(for="option-one")
+          span
+            input#option-two.radio(
+              value="optionB" 
+              name="option" 
+              type="radio"
+              )
+            label#option-two-label.option(for="option-two")
+          span
+            input#option-three.radio(
+              value="optionC" 
+              name="option" 
+              type="radio"
+              )
+            label#option-three-label.option(for="option-three")
+          span
+            input#option-four.radio(
+              value="optionD" 
+              name="option" 
+              type="radio"
+              )
+            label#option-four-label.option(for="option-four")
+        .next-button-container
+          button(onclick="handleNextQuestion()") Next Question
+    script
+        include ../public/js/arabic-quiz2.js

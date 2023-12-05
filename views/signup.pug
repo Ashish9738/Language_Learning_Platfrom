@@ -1,0 +1,111 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(
+      content="width=device-width, initial-scale=1.0" 
+      name="viewport"
+      )
+    meta(
+      content="ie=edge" 
+      http-equiv="X-UA-Compatible"
+      )
+    title SignUp
+    style 
+      include ../public/css/signup.css
+  body
+    section.container
+      header Sign Up
+      form#form(
+        method="post" 
+        action="/signup"
+        )
+        .input-box
+          label Full Name
+          input(
+            required="" 
+            placeholder="Enter full name" 
+            type="text"
+            name='name'
+            )
+        .input-box
+          label Email Address
+          input(
+            required="" 
+            placeholder="Enter email address" 
+            type="text"
+            name='email'
+            )
+        .column
+          .input-box
+            label Phone Number
+            input.input-box-ph-no(
+              required="" 
+              placeholder="Enter phone number" 
+              type="number"
+              name='phone'
+              )
+          .input-box
+            label Birth Date
+            input.input-box-birth(
+              required="" 
+              placeholder="Enter birth date" 
+              type="date"
+              name='dob'
+              )
+        .gender-box
+          h3 Gender
+          .gender-option
+            .gender
+              input#check-male(
+                checked="" 
+                name="gender" 
+                type="radio"
+                value='male'
+                )
+              label(for="check-male") male
+            .gender
+              input#check-female(
+                name="gender" 
+                type="radio"
+                value='female'
+                )
+              label(for="check-female") Female
+            .gender
+              input#check-other(
+                name="gender" 
+                type="radio"
+                value='other'
+                )
+              label(for="check-other") Other
+        .input-box.address
+          .select-box
+            select(name='country')
+              option(hidden="") Country
+              option(value="India") India
+              option(value="Pakistan") Pakistan
+              option(value="Afghanistan") Afghanistan
+              option(value="Nepal") Nepal
+              option(value="Bangladesh") Bangladesh
+              option(value="Other") Other
+        #password.input-box
+          input(type="password" placeholder='Enter Password' id='password')
+          input(type="text" placeholder='Confirm Password' name='password' id='confirmPassword')
+        #message= message
+        button SignUp
+        .pass-div
+          a.pass-signup(href="/login") Already have an account.
+    | //-
+    script.
+      const password=document.getElementById('password');
+      const form=document.getElementById('form');
+      const password=document.getElementById('password').value;
+      const confirmPassword=document.getElementById('confirmPassword').value;
+      const message=document.getElementById('message');
+
+      form.addEventListener('submit',(e)={
+        if(confirmPassword!==password){
+          e.preventDefault();
+          message.innerHTML='Passord not matching'
+        }
+      })

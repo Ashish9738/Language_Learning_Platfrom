@@ -1,0 +1,76 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Explore
+    style 
+      include ../public/css/explore.css
+    //- link(rel="stylesheet", href="../public/css/explore.css")
+    script(src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate")
+
+  body
+    header
+      nav.navbar
+        div.website-general
+          img.logo(src="/img/website-logo.png", alt="Logo", class="logo")
+          h2.logo
+            a.name(href="#" class="name") Bahu Bhasha
+        input(type="checkbox" id="menu-toggler")
+        label(for="menu-toggler" id="hamburger-btn")
+          svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", fill="white", width="24px", height="24px")
+            path(d="M0 0h24v24H0z" fill="none")
+            path(d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z")
+        ul.all-links
+          div.google-translator#google_element
+          li
+            a(href="/", target="_blank") Back
+
+    p.language-header Which language would you like to learn?
+
+    .languages
+      .english
+        img(src="/img/explore/english.png", alt="English")
+        p.p-language English
+        button(onclick="redirectPageEnglishh()") Learn for free
+      .arabic
+        img(src="/img/explore/Arabic.jpeg", alt="Arabic")
+        p.p-language Arabic
+        button(onclick="redirectPageArabic()") Learn for free
+      .spanish
+        img(src="/img/explore/Spanish.png", alt="Spanish")
+        p.p-language Spanish
+        button(onclick="redirectPageSpanish()") Learn for free
+      .french
+        img(src="/img/explore/French.png", alt="French")
+        p.p-language French
+        button(onclick="redirectPageFrench()") Learn for free
+      .japanese
+        img(src="/img/explore/Japanese.png", alt="Japanese")
+        p.p-language Japanese
+        button(onclick="redirectPageJapanese()") Learn for free
+      .korean
+        img(src="/img/explore/Korean.png", alt="Korean")
+        p.p-language Korean
+        button(onclick="redirectPageKorean()") Learn for free
+
+    script.
+      function redirectPageEnglishh() {
+        var form = document.getElementById("form");
+        window.location.href = "/englishcontent";
+      }
+
+      function redirectPageArabic() {
+        var form = document.getElementById("form");
+        window.location.href = "/arabic";
+      }
+
+      function redirectPageJapanese() {
+        var form = document.getElementById("form");
+        window.location.href = "/japanesecontent";
+      }
+
+
+      function loadGoogleTranslate() {
+        new google.translate.TranslateElement("google_element");
+      }

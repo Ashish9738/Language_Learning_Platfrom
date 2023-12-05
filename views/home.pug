@@ -1,0 +1,99 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Home
+  style 
+    include ../public/css/home.css
+  //- link(rel='stylesheet' href='../public/css/home.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css')
+  script(src='https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate')
+header
+  nav.navbar
+    .website-general
+      img.logo(src='/img/website-logo.png' alt='Logo')
+      h2.logo
+        a.name(href='#') Bahu Bhasha
+    input#menu-toggler(type='checkbox')
+    label#hamburger-btn(for='menu-toggler')
+      svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' fill='white' width='24px' height='24px')
+        path(d='M0 0h24v24H0z' fill='none')
+        path(d='M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z')
+    ul.all-links
+      #google_element.google-translator
+      li
+        a(href='/') Home
+section#home.homepage
+  .content
+    .text
+      h1 Free Language Learning Platform
+      p.description
+        | The Bahu Bhasha platform creates a tapestry of fluency by weaving together grammar,
+        | vocabulary, and cultural elements. Engage in interactive lectures, quizzes, and real-world discussions.
+        | Monitor your development and see how your language abilities improve. With Bahu Bhasha, open up a universe of
+        | communications.
+    a.explore-more(href='/login' target='_blank') Explore More
+section#services.services
+  h2 Pick Up
+  p  Open up a universe of communication.
+  ul.cards
+    li.card
+      img(src='/img//icons/lessons.png' alt='Lessons')
+      h3 Lessons
+      p
+        | Embrace the beauty of mistakes, celebrate small victories, and make language a daily companion.
+    li.card
+      img.quizzes-icon(src='/img/icons/quizzes.png' alt='icons')
+      h3 Quizzes
+      p
+        | Immediate feedback from quizzes refines your understanding, correcting errors and solidifying knowledge.
+    li.card
+      img(src='/img/icons/progress.png' alt='progress')
+      h3 Progress Tracking
+      p
+        | It turns the journey of learning a language into an intentional, self-aware undertaking.
+section#about.about
+  h2 Reasons to count on us
+  br
+  .row.company-info
+    | Bahu Bhasha is a virtual classroom where you can pick up new languages without the traditional books and
+    | blackboards. Imagine it as a digital playground for your brain to explore and absorb words and phrases. These
+    | platforms offer a variety of tools, like interactive lessons, games, and quizzes, making the process feel more
+    | like a fun adventure than a tedious task. You can listen to native speakers, practice your pronunciation, and even
+    | chat with fellow language enthusiasts. It&apos;s like having a language teacher in your pocket, guiding you through the
+    | linguistic landscape at your own pace. Plus, these platforms often track your progress, so you can celebrate the
+    | small victories on your journey to becoming a language maestro. Whether you&apos;re learning for travel, work, or just
+    | the thrill of mastering a new tongue, these platforms provide a user-friendly bridge to connect you with a world
+    | of words.
+section#contact.contact
+  h2 Contact Us
+  br
+  p Reach out to us for any inquiries or feedback.
+  .row
+    .col.information
+      .contact-details
+        p
+          i.fas.fa-map-marker-alt
+          |  Atria Institute of Technology, Hebbal, Bengaluru - 560024
+        p
+          i.fas.fa-envelope
+          |  abc@gmail.com
+        p
+          i.fas.fa-phone
+          | 9876543210
+    .col.form
+      form(method='post' action='/contact')
+        input(type='text' placeholder='Name*' required='' name='name')
+        input(type='email' placeholder='Email*' required='' name='email')
+        textarea(placeholder='Message*' required='' name='message')
+        button#submit(type='submit') Send Message
+footer
+  div
+    span Copyright &copy; 2023 All Rights Reserved
+    span.link
+      a(href='#') About Us
+      a(href='#contact') Contact Us
+script.
+  function loadGoogleTranslate() {
+  new google.translate.TranslateElement("google_element");
+  }
